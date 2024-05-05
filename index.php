@@ -21,10 +21,12 @@
   <!-- Main Sidebar Container -->
   <?php
     include 'layout/sidebar-template.php';
+    include 'layout/navbar-template.php';
   ?>
 
+
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="background-color: #E2EBED;">
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
@@ -44,42 +46,42 @@
         <div class="row">
           <div class="col-lg-4 col-6">
             <!-- small box -->
-            <div class="small-box bg-info">
+            <div class="d-flex small-box bg-info justify-content-between align-items-center">
               <div class="inner">
                 <h3>150</h3>
 
                 <p>Maestros</p>
               </div>
-              <div class="icon">
-                <i class="ion ion-bag"></i>
+              <div class="icon mr-3">
+                <img src="<?=BASE_PATH?>src/images/icons/Libro.svg" alt="IconMaestros">
               </div>
             </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-4 col-6">
             <!-- small box -->
-            <div class="small-box bg-success">
+            <div class="d-flex small-box bg-info justify-content-between align-items-center">
               <div class="inner">
                 <h3>53<sup style="font-size: 20px">%</sup></h3>
 
                 <p>Eventos</p>
               </div>
               <div class="icon">
-                <i class="ion ion-stats-bars"></i>
+                <img src="<?=BASE_PATH?>src/images/icons/stats.svg" alt="IconStats">
               </div>
             </div>
           </div>
           <!-- ./col -->
           <div class="col-lg-4 col-6">
             <!-- small box -->
-            <div class="small-box bg-warning">
+            <div class="d-flex small-box bg-info justify-content-between align-items-center">
               <div class="inner">
                 <h3>44</h3>
 
                 <p>Alumnos Registrados</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add"></i>
+                <img src="<?=BASE_PATH?>src/images/icons/pencil.svg" alt="IconPencil">
               </div>
             </div>
           </div>

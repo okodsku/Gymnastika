@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-dark-primary elevation-4">
+<aside class="main-sidebar elevation-4 "style="background-color: #7E9DB6;">
     <!-- Brand Logo -->
     <a href="<?=BASE_PATH?>" class="brand-link">
       <img src="<?=BASE_PATH?>src/images/v2_4.png" alt="AdminLTE Logo" class="img-thumbnail" style="opacity: .8">
