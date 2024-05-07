@@ -38,7 +38,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link d-flex justify-content-start align-items-center">
+            <a href="<?=BASE_PATH?>routes/pagos.php" class="nav-link d-flex justify-content-start align-items-center">
               <img src="<?=BASE_PATH?>src/images/sidebar/card-outline.svg" alt="">
               <p>Pagos</p>
             </a>
@@ -47,12 +47,6 @@
             <a href="#" class="nav-link d-flex justify-content-start align-items-center">
               <img src="<?=BASE_PATH?>src/images/sidebar/newspaper-outline.svg" alt="">
               <p>Anuncios</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link d-flex justify-content-start align-items-center">
-              <img src="<?=BASE_PATH?>src/images/sidebar/cog-outline.svg" alt="">
-              <p>Ajustes</p>
             </a>
           </li>
           

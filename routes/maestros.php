@@ -45,59 +45,44 @@
             <div class="col-lg-12 d-flex justify-content-end mb-4">
               <button class="btn btn-primary">Agregar maestro</button>
             </div>
-            <div class="card pt-5">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Maestros</h3>
+              </div>
               <!-- /.card-header -->
-              <div class="card-body p-5 ">
-                <ul class="users-list clearfix">
-                  <li>
-                    <img src="<?=BASE_PATH?>dist/img/user1-128x128.jpg" alt="User Image">
-                    <a class="users-list-name" href="#">Alexander Pierce</a>
-                    <span class="users-list-date">Today</span>
-                  </li>
-                  <li>
-                    <img src="<?=BASE_PATH?>dist/img/user1-128x128.jpg" alt="User Image">
-                    <a class="users-list-name" href="#">Alexander Pierce</a>
-                    <span class="users-list-date">Today</span>
-                  </li>
-                  <li>
-                    <img src="<?=BASE_PATH?>dist/img/user1-128x128.jpg" alt="User Image">
-                    <a class="users-list-name" href="#">Alexander Pierce</a>
-                    <span class="users-list-date">Today</span>
-                  </li>
-                  <li>
-                    <img src="<?=BASE_PATH?>dist/img/user1-128x128.jpg" alt="User Image">
-                    <a class="users-list-name" href="#">Alexander Pierce</a>
-                    <span class="users-list-date">Today</span>
-                  </li>
-                  <li>
-                    <img src="<?=BASE_PATH?>dist/img/user1-128x128.jpg" alt="User Image">
-                    <a class="users-list-name" href="#">Alexander Pierce</a>
-                    <span class="users-list-date">Today</span>
-                  </li>
-                  <li>
-                    <img src="<?=BASE_PATH?>dist/img/user1-128x128.jpg" alt="User Image">
-                    <a class="users-list-name" href="#">Alexander Pierce</a>
-                    <span class="users-list-date">Today</span>
-                  </li>
-                  <li>
-                    <img src="<?=BASE_PATH?>dist/img/user1-128x128.jpg" alt="User Image">
-                    <a class="users-list-name" href="#">Alexander Pierce</a>
-                    <span class="users-list-date">Today</span>
-                  </li>
-                  <li>
-                    <img src="<?=BASE_PATH?>dist/img/user1-128x128.jpg" alt="User Image">
-                    <a class="users-list-name" href="#">Alexander Pierce</a>
-                    <span class="users-list-date">Today</span>
-                  </li>
-                 
-                </ul>
-                <!-- /.users-list -->
+              <div class="card-body p-0">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th style="width: 10px">ID</th>
+                      <th>Nombre</th>
+                      <th>Domicilio</th>
+                      <th>Celular</th>
+                      <th>Correo</th>
+                      <th>Sueldo</th>
+                      <th>Opciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1.</td>
+                      <td>Pollo</td>
+                      <td>Av. Siempre Viva 123</td>
+                      <td>612 123 22 22</td>
+                      <td>pollo@gmail.com</td>
+                      <td>$20,000</td>
+                      <td>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                          Launch Default Modal
+                        </button>
+                        <button class="btn btn-danger">Eliminar</button>
+                      </td>
+
+                    </tr>
+                  </tbody>
+                </table>
               </div>
               <!-- /.card-body -->
-              <div class="card-footer text-center">
-                <a href="javascript:">View All Users</a>
-              </div>
-              <!-- /.card-footer -->
             </div>
           </div>
         </div>
@@ -149,5 +134,6 @@
 <?php
   include '../layout/scripts-template.php';
 ?>
+
 </body>
 </html>
