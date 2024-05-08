@@ -26,7 +26,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link d-flex justify-content-start align-items-center">
+            <a href="<?=BASE_PATH?>routes/alumnos.php" class="nav-link d-flex justify-content-start align-items-center">
               <img src="<?=BASE_PATH?>src/images/sidebar/people-outline.svg" alt="">
               <p>Alumnos</p>
             </a>

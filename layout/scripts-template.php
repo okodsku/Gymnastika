@@ -1,3 +1,4 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="<?=BASE_PATH?>plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="<?=BASE_PATH?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>

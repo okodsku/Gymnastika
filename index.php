@@ -46,7 +46,7 @@
         <div class="row">
           <div class="col-lg-4 col-6">
             <!-- small box -->
-            <div class="d-flex small-box bg-info justify-content-between align-items-center">
+            <div class="d-flex small-box bg-success justify-content-between align-items-center" style="background-color: #7E9DB6 !important; ">
               <div class="inner">
                 <h3>150</h3>
 
@@ -60,7 +60,7 @@
           <!-- ./col -->
           <div class="col-lg-4 col-6">
             <!-- small box -->
-            <div class="d-flex small-box bg-info justify-content-between align-items-center">
+            <div class="d-flex small-box bg-light justify-content-between align-items-center">
               <div class="inner">
                 <h3>53<sup style="font-size: 20px">%</sup></h3>
 
@@ -74,7 +74,7 @@
           <!-- ./col -->
           <div class="col-lg-4 col-6">
             <!-- small box -->
-            <div class="d-flex small-box bg-info justify-content-between align-items-center">
+            <div class="d-flex small-box bg-primary justify-content-between align-items-center" style="background-color: #7E9DB6 !important; ">
               <div class="inner">
                 <h3>44</h3>
 
@@ -92,25 +92,8 @@
           <!-- Left col -->
           <!-- /.Left col -->
           <!-- right col (We are only adding the ID to make the widgets sortable)-->
-          <section class="col-lg-5">
-            
-            <div class="card bg-gradient-success">
-              <!-- /.card-header -->
-              <div class="card-header border-0">
-                <h3 class="card-title">
-                  <i class="far fa-calendar-alt"></i>
-                  Calendario
-                </h3>
-              </div>
-              <div class="card-body pt-0">
-                <!--The calendar -->
-                <div id="calendar" style="width: 100%"></div>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            
-          </section>
-          <section class="col-lg-6 connectedSortable"> <!-- tamaño del boostrap  -->
+
+          <section class="col-lg-12 connectedSortable"> <!-- tamaño del boostrap  -->
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">
@@ -122,11 +105,11 @@
                 <div class="tab-content p-0">
                   <!-- Morris chart - Sales -->
                   <div class="chart tab-pane active" id="revenue-chart"
-                       style="position: relative; height: 300px;">
-                      <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>
+                       style="position: relative; height: 500px;">
+                      <canvas id="revenue-chart-canvas" height="500" style="height: 500px;"></canvas>
                    </div>
-                  <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;">
-                    <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>
+                  <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 500px;">
+                    <canvas id="sales-chart-canvas" height="500" style="height: 500px;"></canvas>
                   </div>
                 </div>
               </div><!-- /.card-body -->
@@ -164,7 +147,7 @@
                   <tr>
                     <td>
                       <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                      Andres putita
+                      Andres Gtz
                     </td>
                     <td>ID: #6969</td>
                     <td>
