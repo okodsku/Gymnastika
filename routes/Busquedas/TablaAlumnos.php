@@ -11,7 +11,7 @@ $result = $conn->query($sql);
             <th>Nombre</th>
             <th>Fecha</th>
             <th>Curp</th>
-            <th>Operaciones</th>
+            <th style='text-align: center;'>Operaciones</th>
         </tr>
     </thead>
     <tbody>
@@ -23,7 +23,11 @@ $result = $conn->query($sql);
                 echo "<td>" . $row["nombres"]. " " . $row["apellidos"]. "</td>";
                 echo "<td>" . $row["fecha_ingreso"]. "</td>";
                 echo "<td>" . $row["curp"]. "</td>";
-                echo "<td><button class='btn btn-danger' onclick='eliminar(" . $row["id_alumno"] . ")'>Eliminar</button></td>";
+                echo "<td style='text-align: center;'>
+                <button class='btn btn-danger' style='margin-right: 10px;' onclick='eliminar(" . $row["id_alumno"] . ")'>Eliminar</button>
+                <button class='btn btn-primary' style='margin-right: 10px;' onclick='mostrar(" . $row["id_alumno"] . ")'>Mostrar</button>
+                <button class='btn btn-secondary' onclick='modificar(" . $row["id_alumno"] . ")'>Modificar</button>
+            </td>";
                 echo "</tr>";
             }
         } 
