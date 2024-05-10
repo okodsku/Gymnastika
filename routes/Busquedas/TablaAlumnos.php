@@ -24,9 +24,9 @@ $result = $conn->query($sql);
                 echo "<td>" . $row["fecha_ingreso"]. "</td>";
                 echo "<td>" . $row["curp"]. "</td>";
                 echo "<td style='text-align: center;'>
-                <button class='btn btn-danger' style='margin-right: 10px;' onclick='eliminar(" . $row["id_alumno"] . ")'>Eliminar</button>
-                <button class='btn btn-primary' style='margin-right: 10px;' onclick='mostrar(" . $row["id_alumno"] . ")'>Mostrar</button>
-                <button class='btn btn-secondary' onclick='modificar(" . $row["id_alumno"] . ")'>Modificar</button>
+                <button class='btn btn-danger mb-1' style='margin-right: 10px;' onclick='eliminar(" . $row["id_alumno"] . ")'>Eliminar</button>
+                <button class='btn btn-primary mb-1' style='margin-right: 10px;' onclick='mostrar(" . $row["id_alumno"] . ")'>Ver Detalles</button>
+                <button class='btn btn-secondary mb-1' onclick='modificar(" . $row["id_alumno"] . ")'>Modificar</button>
             </td>";
                 echo "</tr>";
             }
