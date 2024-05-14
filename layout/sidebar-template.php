@@ -32,9 +32,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?=BASE_PATH?>routes/maestros.php" class="nav-link d-flex justify-content-start align-items-center">
+            <a href="<?=BASE_PATH?>routes/instructores.php" class="nav-link d-flex justify-content-start align-items-center">
               <img src="<?=BASE_PATH?>src/images/sidebar/barbell-outline.svg" alt="">
-              <p>Maestros</p>
+              <p>Instructores</p>
             </a>
           </li>
           <li class="nav-item">
@@ -44,9 +44,16 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link d-flex justify-content-start align-items-center">
+            <a href="<?=BASE_PATH?>routes/disciplina.php" class="nav-link d-flex justify-content-start align-items-center">
               <img src="<?=BASE_PATH?>src/images/sidebar/newspaper-outline.svg" alt="">
-              <p>Anuncios</p>
+              <p>Disciplina</p>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="<?=BASE_PATH?>routes/membresia.php" class="nav-link d-flex justify-content-start align-items-center">
+              <img src="<?=BASE_PATH?>src/images/sidebar/newspaper-outline.svg" alt="">
+              <p>Membresia</p>
             </a>
           </li>
           

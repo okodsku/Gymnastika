@@ -48,9 +48,9 @@
             <!-- small box -->
             <div class="d-flex small-box bg-success justify-content-between align-items-center" style="background-color: #7E9DB6 !important; ">
               <div class="inner">
-                <h3>150</h3>
+                <h3>05</h3>
 
-                <p>Maestros</p>
+                <p>Instructores</p>
               </div>
               <div class="icon mr-3">
                 <img src="<?=BASE_PATH?>src/images/icons/Libro.svg" alt="IconMaestros">
@@ -76,7 +76,7 @@
             <!-- small box -->
             <div class="d-flex small-box bg-primary justify-content-between align-items-center" style="background-color: #7E9DB6 !important; ">
               <div class="inner">
-                <h3>44</h3>
+                <h3>02</h3>
 
                 <p>Alumnos Registrados</p>
               </div>
