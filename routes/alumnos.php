@@ -135,10 +135,54 @@
             </div>
           </div>
           <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <div class="form-group">
-              <label for="fecha_ingreso2">Fecha Ingreso</label>
-              <input type="datetime-local" class="form-control"  required id="fecha_ingreso2" name="fecha_ingreso2">
+            <div class="row">
+              <div class="col-lg-12 d-flex justify-content-started mt-2 mb-2">
+                <button class="btn btn-success mr-1" onclick="mostrarPadres()">Asignar Padre</button>
+                <button class="btn btn-info" onclick="mostrarMadres()">Asignar Madre</button>
+              </div>
+              
             </div>
+            <div class="row">
+                <div class="col-lg-4">
+                  <label for="Nombre">Nombre Padre</label>
+                  <input type="text" class="form-control" required id="nombreP" readonly name="nombreP">
+                </div>
+                <div class="col-lg-4">
+                  <label for="Apellido">Apellido Padre</label>
+                  <input type="text" class="form-control" required id="apellidoP" readonly name="apellidoP">
+                </div>
+                <div class="col-lg-4">
+                  <label for="Celular">Celular Padre</label>
+                  <input type="number" class="form-control" required id="celularP" readonly name="celularP">
+                </div>
+                <input type="hidden" id="idP" name="idP">
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <label for="Nombre">Nombre Madre</label>
+                  <input type="text" class="form-control" required id="nombreM" readonly name="nombreM">
+                </div>
+                <div class="col-lg-4">
+                  <label for="Apellido">Apellido Madre</label>
+                  <input type="text" class="form-control" required id="apellidoM" readonly name="apellidoM">
+                </div>
+                <div class="col-lg-4">
+                  <label for="Celular">Celular Madre</label>
+                  <input type="number" class="form-control" required id="celularM" readonly name="celularM">
+                </div>
+                <input type="hidden" id="idM" name="idM">
+              </div>
+              <div class="row">
+                <div class="col-lg-4">
+                  <label for="Nombre">Nombre Contacto Emergencia</label>
+                  <input type="text" class="form-control" required id="nombreCE" name="nombreCE">
+                </div>
+                <div class="col-lg-4">
+                  <label for="Celular">Celular Contacto Emergencia</label>
+                  <input type="number" class="form-control" required id="celularCE" name="celularCE">
+                </div>
+              </div>
+            
           </div>
           
         </div>
@@ -207,6 +251,37 @@
         </button>
       </div>
       <div class="modal-body">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="agregarPModal" tabindex="-1" role="dialog" aria-labelledby="agregarPModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="agregarPModalLabel">Seleccione un padre asignar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body-padre">
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="agregarMModal" tabindex="-1" role="dialog" aria-labelledby="agregarMModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="agregarMModalLabel">Seleccione una madre asignar</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body-madre">
+        
       </div>
     </div>
   </div>
@@ -318,12 +393,63 @@ let mostrar = (id) => {
 
 let recordatorio = () => {
     Swal.fire({
-        position: "top-end",
+        position: "top-center",
         title: '¡No olvides agregar la información de los padres antes de guardar al alumno.!',
         icon: 'info',
         showConfirmButton: false,
         timer: 2500
     });
+}
+
+let mostrarPadres = () => {
+  $('.modal-body-padre').html('');
+  $('.modal-body-madre').html('');
+  
+    $.ajax({
+        url: 'Busquedas/TablaPadres.php',
+        type: 'post',
+        data: {padre_madre: 'Padre'},
+        success: function(response){
+            $('.modal-body-padre').html(response);
+            $('#agregarPModal').modal('show');
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            console.log(textStatus, errorThrown);
+        }
+    });
+}
+
+let seleccionarPadre = (id, nombreP, apellidoP, celularP) => {
+    $('#nombreP').val(nombreP);
+    $('#apellidoP').val(apellidoP);
+    $('#celularP').val(celularP);
+    $('#idP').val(id);
+    $('#agregarPModal').modal('hide');
+}
+
+let mostrarMadres = () => {
+  $('.modal-body-padre').html('');
+  $('.modal-body-madre').html('');
+    $.ajax({
+        url: 'Busquedas/TablaPadres.php',
+        type: 'post',
+        data: {padre_madre: 'Madre'},
+        success: function(response){
+            $('.modal-body-madre').html(response);
+            $('#agregarMModal').modal('show');
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            console.log(textStatus, errorThrown);
+        }
+    });
+}
+
+let seleccionarMadre = (id, nombreM, apellidoM, celularM) => {
+    $('#nombreM').val(nombreM);
+    $('#apellidoM').val(apellidoM);
+    $('#celularM').val(celularM);
+    $('#idM').val(id);
+    $('#agregarMModal').modal('hide');
 }
 </script>
 </body>
