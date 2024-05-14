@@ -40,7 +40,10 @@ include '../config/config.php';
         <div class="container-fluid">
           <div class="row">
             <div class="col-12 col-sm-6 col-md-4">
-              <div class="info-box">
+              <div class="col-lg-12 d-flex justify-content-end mb-4">
+                <a class="btn btn-primary" href="<?=BASE_PATH?>routes/Busquedas/recibo.php">Generar pdf</a>
+              </div>
+            <div class="info-box">
                 <span class="info-box-icon bg-info elevation-1"><i class="fas fa-cog"></i></span>
 
                 <div class="info-box-content">
