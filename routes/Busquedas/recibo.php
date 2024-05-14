@@ -1,16 +1,10 @@
-<?php
-
-
-ob_start();
-?>
-
 <?php   
 
 include '../Conexiones/Conexion.php';
 
 $sql = "SELECT * FROM alumnos";
 $result = $conn->query($sql);
-
+ob_start();
 
 ?>
 
@@ -50,7 +44,7 @@ $result = $conn->query($sql);
 <body>
     <div class="container">
         <div class="logo">
-            <img src="ruta/al/logo.png" alt="Logo del gimnasio">
+            <img src="http://localhost/gymnastika/src/images/v2_4.png" width="100px" alt="Logo del gimnasio">
         </div>
         <h2 class="text-center">Datos de Alumnos</h2>
         <div class="table-responsive">
@@ -86,15 +80,12 @@ $result = $conn->query($sql);
     </div>
 </body>
 </html>
-<?php
-$html=ob_get_clean();
-echo $html;
 
-?>
 
 <?php
+$html = ob_get_clean();
+require '../../vendor/autoload.php';
 use Dompdf\Dompdf;
-require_once __DIR__ . "C:\xampp\htdocs\Gymnastika\Lib\dompdf\autoload.inc.php";
 
 $dompdf = new Dompdf();
 
@@ -108,6 +99,6 @@ $dompdf->setPaper('letter');
 
 $dompdf->render();
 
-$dompdf->stream("Recibo_de_pago.pdf", array("Attachment" => true));
+$dompdf->stream("Recibo_de_pago.pdf", array("Attachment" => false));
 
 ?>
