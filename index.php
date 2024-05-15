@@ -136,6 +136,33 @@ $total_disciplina = $row3['total'];
                 </div>
               </div><!-- /.card-body -->
             </div>
+
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-md-4">
+                    <div class="card">
+                        <img src="<?=BASE_PATH?>src/images/v2_5.png" class="card-img-top" alt="Image 1">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="card">
+                        <img src="<?=BASE_PATH?>src/images/v2_6.png" class="card-img-top" style="max-height: 300px;" alt="Image 2">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-4">
+                    <div class="card">
+                        <img src="<?=BASE_PATH?>src/images/v2_7.png" class="card-img-top" alt="Image 3">
+                        <div class="card-body">
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             
             <!-- /.card -->
@@ -143,49 +170,7 @@ $total_disciplina = $row3['total'];
             
           </section>
           <section class="col-lg-12">
-            <div class="card">
-              <div class="card-header border-0">
-                <h3 class="card-title">Estudiantes en estado de adeudo</h3>
-                <div class="card-tools">
-                  <a href="#" class="btn btn-tool btn-sm">
-                    <i class="fas fa-download"></i>
-                  </a>
-                  <a href="#" class="btn btn-tool btn-sm">
-                    <i class="fas fa-bars"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="card-body table-responsive p-0">
-                <table class="table table-striped table-valign-middle">
-                  <thead>
-                  <tr>
-                    <th>Alumno</th>
-                    <th>ID</th>
-                    <th>Clase</th>
-                    <th>Saldo pendiente</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                    <td>
-                      <img src="dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                      Andres Gtz
-                    </td>
-                    <td>ID: #6969</td>
-                    <td>
-                      <small class="text-success mr-1">
-                        Striper
-                      </small>
-                    </td>
-                    <td>
-                      $1000,00
-                    </td>
-                  </tr>
-                  
-                  </tbody>
-                </table>
-              </div>
-            </div>
+            
             <div class="card bg-gradient-primary" style="visibility:hidden">
               <div class="card-footer bg-transparent">
                 <div class="row">
