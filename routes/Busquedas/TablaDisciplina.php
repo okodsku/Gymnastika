@@ -13,6 +13,7 @@ $result = $conn->query($sql);
             <th>Costo</th>
             <th>Horario</th>
             <th>Dias_Semana</th>
+            <th>Operaciones</th>
         </tr>
     </thead>
     <tbody>

@@ -12,6 +12,7 @@ $result = $conn->query($sql);
             <th>Apellido</th>
             <th>Celular</th>
             <th>Sueldo</th>
+            <th>Operaciones</th>
         </tr>
     </thead>
     <tbody>
