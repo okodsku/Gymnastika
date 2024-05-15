@@ -51,7 +51,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="<?=BASE_PATH?>routes/membresia.php" class="nav-link d-flex justify-content-start align-items-center">
+            <a href="<?=BASE_PATH?>routes/membresias.php" class="nav-link d-flex justify-content-start align-items-center">
               <img src="<?=BASE_PATH?>src/images/sidebar/newspaper-outline.svg" alt="">
               <p>Membresia</p>
             </a>
