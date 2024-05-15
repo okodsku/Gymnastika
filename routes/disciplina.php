@@ -110,20 +110,24 @@ if (!isset($_SESSION['usuario'])) {
         </nav>
         <div class="tab-content" id="nav-tabContent">
           <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="col-lg-12 d-flex justify-content-started mt-2 mb-2">
+              <button class="btn btn-success mr-1" onclick="mostrarInstructores()">Asignar Instructor</button>
+            </div>
             <div class="form-group">
               <label for="nombre">Nombre</label>
               <input type="text" class="form-control" required id="nombre" name="nombre">
             </div>
             <div class="form-group">
-              <label for="id_instructor">ID_instructor</label>
-              <input type="text" class="form-control" required id="id_instructor" name="id_instructor">
+              <label for="nombreInstructor">Nombre Instructor</label>
+              <input type="text" class="form-control" required readonly id="nombreInstructor" name="nombreInstructor">
             </div>
+            <input type="hidden" class="form-control" id="id_instructor" name="id_instructor">
             <div class="form-group">
               <label for="costo_clase">Costo de Clase</label>
               <input type="text" class="form-control" required id="costo_clase" name="costo_clase">
             </div>
             <div class="form-group">
-              <label for="horario">Horario</>
+              <label for="horario">Horario</label>
               <input type="text" class="form-control" required id="horario" name="horario">
             </div>
             <div class="form-group">
@@ -228,7 +232,7 @@ let eliminar = (id) => {
     });
 }
 
-/*let mostrar = (id) => {
+let mostrar = (id) => {
     $.ajax({
         url: 'Busquedas/MostrarDisciplina.php',
         type: 'post',
@@ -243,7 +247,7 @@ let eliminar = (id) => {
     });
 }
 
-*/
+
 let recordatorio = () => {
     Swal.fire({
         position: "top-center",
@@ -252,6 +256,27 @@ let recordatorio = () => {
         showConfirmButton: false,
         timer: 2500
     });
+}
+
+let mostrarInstructores = () => {
+    $.ajax({
+        url: 'Busquedas/Instructores.php',
+        type: 'post',
+        success: function(response){
+            $('#mostrarModal .modal-body').html(response);
+            $('#mostrarModal').modal('show');
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            console.log(textStatus, errorThrown);
+        }
+    });
+}
+
+let seleccionarInstructor = (id, nombres, apellidos, celular) => {
+    $('#id_instructor').val(id);
+    $('#nombreInstructor').val(nombres + ' ' + apellidos);
+    $('#mostrarModal').modal('hide');
+    Swal.fire('Instructor Seleccionado', nombres + ' ' + apellidos + ' ' + celular, 'success');
 }
 
 </script>

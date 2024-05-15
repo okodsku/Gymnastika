@@ -8,6 +8,21 @@ if (!isset($_SESSION['usuario'])) {
 }
 
 include './config/config.php';
+include 'routes/Conexiones/conexion.php';
+$sql = "SELECT count(id_alumno) as total FROM alumnos;";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
+$total_alumnos = $row['total'];
+
+$sql = "SELECT count(id_instructor) as total FROM instructores;";
+$result = $conn->query($sql);
+$row2 = $result->fetch_assoc();
+$total_instructores = $row2['total'];
+
+$sql = "SELECT count(id_disciplina) as total FROM disciplina;";
+$result = $conn->query($sql);
+$row3 = $result->fetch_assoc();
+$total_disciplina = $row3['total'];
 ?>
 
 
@@ -54,44 +69,43 @@ include './config/config.php';
         <div class="row">
           <div class="col-lg-4 col-6">
             <!-- small box -->
-            <div class="d-flex small-box bg-success justify-content-between align-items-center" style="background-color: #7E9DB6 !important; ">
+            <a href="<?=BASE_PATH?>routes/instructores.php"><div class="d-flex small-box bg-success justify-content-between align-items-center" style="background-color: #7E9DB6 !important; ">
               <div class="inner">
-                <h3>05</h3>
+                <h3><?php echo $total_instructores ?></h3>
 
                 <p>Instructores</p>
               </div>
               <div class="icon mr-3">
                 <img src="<?=BASE_PATH?>src/images/icons/Libro.svg" alt="IconMaestros">
               </div>
-            </div>
+            </div></a>
           </div>
           <!-- ./col -->
           <div class="col-lg-4 col-6">
             <!-- small box -->
-            <div class="d-flex small-box bg-light justify-content-between align-items-center">
+            <a href="<?=BASE_PATH?>routes/disciplina.php"><div class="d-flex small-box bg-primary justify-content-between align-items-center" style="background-color: #7E9DB6 !important; ">
               <div class="inner">
-                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                <h3><?php echo $total_disciplina ?></h3>
 
-                <p>Eventos</p>
+                <p>Diciplinas</p>
               </div>
               <div class="icon">
-                <img src="<?=BASE_PATH?>src/images/icons/stats.svg" alt="IconStats">
+                <img src="<?=BASE_PATH?>src/images/icons/pencil.svg" alt="IconPencil">
               </div>
-            </div>
+            </div></a>
           </div>
-          <!-- ./col -->
           <div class="col-lg-4 col-6">
             <!-- small box -->
-            <div class="d-flex small-box bg-primary justify-content-between align-items-center" style="background-color: #7E9DB6 !important; ">
+            <a href="<?=BASE_PATH?>routes/alumnos.php"><div class="d-flex small-box bg-primary justify-content-between align-items-center" style="background-color: #7E9DB6 !important; ">
               <div class="inner">
-                <h3>02</h3>
+                <h3><?php echo $total_alumnos ?></h3>
 
                 <p>Alumnos Registrados</p>
               </div>
               <div class="icon">
                 <img src="<?=BASE_PATH?>src/images/icons/pencil.svg" alt="IconPencil">
               </div>
-            </div>
+            </div></a>
           </div>
         </div>
         <!-- /.row -->
