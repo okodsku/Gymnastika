@@ -5,25 +5,7 @@ session_unset();
 session_destroy();
 include 'Conexiones/Conexion.php';
 include '../config/config.php';
-// Verificar si se envió el formulario
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $usuario = $_POST['usuario'];
-    $contrasena = $_POST['contrasena'];
-    
-    $sql = "SELECT * FROM usuario WHERE usuario = '$usuario' AND contraseña = '$contrasena'";
-    $result = $conn->query($sql);
 
-    
-    if ($result->num_rows > 0) {
-        session_start();
-        $row = $result->fetch_assoc();
-        $_SESSION['usuario'] = $row['usuario'];
-        $_SESSION['id'] = $row['id'];
-        header("Location: ../index.php");
-    } else {
-        echo "Usuario o contraseña incorrectos";
-    }
-}
 ?>
 
 <!DOCTYPE html>
@@ -80,6 +62,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
   <!-- AdminLTE App -->
   <script src="../../dist/js/adminlte.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
+
+<?php
+// Verificar si se envió el formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $usuario = $_POST['usuario'];
+  $contrasena = $_POST['contrasena'];
+  
+  $sql = "SELECT * FROM usuario WHERE usuario = '$usuario' AND contraseña = '$contrasena'";
+  $result = $conn->query($sql);
+
+  
+  if ($result->num_rows > 0) {
+      session_start();
+      $row = $result->fetch_assoc();
+      $_SESSION['usuario'] = $row['usuario'];
+      $_SESSION['id'] = $row['id'];
+      header("Location: ../index.php");
+  } else {
+      echo "<script>Swal.fire('Usuario o contraseña incorrectos','','error')</script> ";
+  }
+}
+?>
