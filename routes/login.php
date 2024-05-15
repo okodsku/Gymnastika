@@ -1,6 +1,10 @@
 
 <?php
-include '../Conexiones/Conexion.php';
+session_start();
+session_unset();
+session_destroy();
+include 'Conexiones/Conexion.php';
+include '../config/config.php';
 // Verificar si se envió el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuario = $_POST['usuario'];
@@ -11,7 +15,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     
     if ($result->num_rows > 0) {
-        exit();
+        session_start();
+        $row = $result->fetch_assoc();
+        $_SESSION['usuario'] = $row['usuario'];
+        $_SESSION['id'] = $row['id'];
+        header("Location: ../index.php");
     } else {
         echo "Usuario o contraseña incorrectos";
     }

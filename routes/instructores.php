@@ -1,4 +1,11 @@
 <?php
+session_start(); // Inicia la sesión
+// Verificar si la sesión está activa
+if (!isset($_SESSION['usuario'])) {
+  // Si no hay una sesión activa, redirige al usuario a la página de inicio de sesión
+  header("Location: Routes/login.php");
+  exit;
+}
   include '../config/config.php';
 ?>
 
@@ -86,55 +93,55 @@
     <!-- /.content -->
   </div>
   <div class="modal fade" id="studentModal" tabindex="-1" role="dialog" aria-labelledby="studentModalLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
-  <div class="modal-dialog modal-xl" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="studentModalLabel">Agregar Instructor</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <div class="modal-dialog modal-xl" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="studentModalLabel">Agregar Instructor</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="" method="post" id="formInstructor">
-        <nav>
-          <div class="nav nav-tabs" id="nav-tab" role="tablist">
-            <button class="nav-link active" id="nav-home-tab" data-toggle="tab" data-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Datos Generales</button>
-          </div>
-        </nav>
-        <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-          <div class="form-group">
-            <div class="form-group">
-              <label for="nombres">Nombre</label>
-              <input type="text" class="form-control" required id="nombres" name="nombres">
-            </div>
-            <div class="form-group">
-              <label for="apellidos">Apellido</label>
-              <input type="text" class="form-control" required id="apellidos" name="apellidos">
-            </div>
-            <div class="form-group">
-              <label for="domicilio">Domicilio</label>
-              <input type="text" class="form-control" required id="domicilio" name="domicilio">
-            </div>
-            <div class="form-group">
-              <label for="celular">Celular</label>
-              <input type="text" class="form-control" required id="celular" name="celular">
-            </div>
-            <div class="form-group">
-              <label for="correo">Correo</label>
-              <input type="text" class="form-control" id="correo" name="correo">
-            </div>
-            <div class="form-group">
-              <label for="sueldo">Sueldo</label>
-              <input type="text" class="form-control" id="sueldo" name="sueldo">
-            </div>
-          </div>
+          </button>
         </div>
+        <div class="modal-body">
+          <form action="" method="post" id="formInstructor">
+          <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+              <button class="nav-link active" id="nav-home-tab" data-toggle="tab" data-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Datos Generales</button>
+            </div>
+          </nav>
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              <div class="form-group">
+                <label for="nombres">Nombre</label>
+                <input type="text" class="form-control" required id="nombres" name="nombres">
+              </div>
+              <div class="form-group">
+                <label for="apellidos">Apellido</label>
+                <input type="text" class="form-control" required id="apellidos" name="apellidos">
+              </div>
+              <div class="form-group">
+                <label for="domicilio">Domicilio</label>
+                <input type="text" class="form-control" required id="domicilio" name="domicilio">
+              </div>
+              <div class="form-group">
+                <label for="celular">Celular</label>
+                <input type="text" class="form-control" required id="celular" name="celular">
+              </div>
+              <div class="form-group">
+                <label for="correo">Correo</label>
+                <input type="text" class="form-control" id="correo" name="correo">
+              </div>
+              <div class="form-group">
+                <label for="sueldo">Sueldo</label>
+                <input type="text" class="form-control" id="sueldo" name="sueldo">
+              </div>
+            </div>
+          </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
           <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 </div>
