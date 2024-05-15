@@ -1,4 +1,11 @@
 <?php
+session_start(); // Inicia la sesión
+// Verificar si la sesión está activa
+if (!isset($_SESSION['usuario'])) {
+  // Si no hay una sesión activa, redirige al usuario a la página de inicio de sesión
+  header("Location: Routes/login.php");
+  exit;
+}
   include '../config/config.php';
 ?>
 
@@ -103,7 +110,6 @@
         </nav>
         <div class="tab-content" id="nav-tabContent">
           <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-          <div class="form-group">
             <div class="form-group">
               <label for="nombre">Nombre</label>
               <input type="text" class="form-control" required id="nombre" name="nombre">
@@ -131,6 +137,7 @@
           <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
       </form>
+    </div>
     </div>
   </div>
 </div>

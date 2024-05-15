@@ -1,4 +1,11 @@
 <?php
+session_start(); // Inicia la sesión
+// Verificar si la sesión está activa
+if (!isset($_SESSION['usuario'])) {
+  // Si no hay una sesión activa, redirige al usuario a la página de inicio de sesión
+  header("Location: Routes/login.php");
+  exit;
+}
 include '../config/config.php';
 ?>
 <!DOCTYPE html>
