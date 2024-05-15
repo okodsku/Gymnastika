@@ -2,7 +2,7 @@
 include '../Conexiones/Conexion.php';
 
 $nombre = isset($_POST['nombre']) ? $_POST['nombre'] : '';
-$id_instructor = isset($_POST['idI']) ? $_POST['idI'] : '';
+$id_instructor = isset($_POST['id_instructor']) ? $_POST['id_instructor'] : '';
 $costo_clase = isset($_POST['costo_clase']) ? $_POST['costo_clase'] : '';
 $horario = isset($_POST['horario']) ? $_POST['horario'] : '';
 $dia_semana = isset($_POST['dia_semana']) ? $_POST['dia_semana'] : '';
