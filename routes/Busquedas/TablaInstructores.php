@@ -27,7 +27,7 @@ $result = $conn->query($sql);
                 echo "<td>" . $row["sueldo"]. "</td>";
                 echo "<td style='text-align: center;'>
                 <button class='btn btn-danger mb-1' style='margin-right: 10px;' onclick='eliminar(" . $row["id_instructor"] . ")'>Eliminar</button>
-                <button class='btn btn-primary mb-1' style='margin-right: 10px;' onclick='mostrar(" . $row["id_instructor"] . ")'>Ver Detalles</button>
+                <button class='btn btn-primary mb-1' style='margin-right: 10px; border-color:#7E9DB6; background-color:#7E9DB6;' onclick='mostrar(" . $row["id_instructor"] . ")'>Ver Detalles</button>
                 <button class='btn btn-secondary mb-1' onclick='modificar(" . $row["id_instructor"] . ")'>Modificar</button>
             </td>";
                 echo "</tr>";

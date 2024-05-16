@@ -251,7 +251,7 @@ let mostrar = (id) => {
 let recordatorio = () => {
     Swal.fire({
         position: "top-center",
-        title: '¡Asegurate de que sea un istructor!',
+        title: '¡Asegurate de que sea un instructor!',
         icon: 'info',
         showConfirmButton: false,
         timer: 2500
