@@ -110,6 +110,9 @@ if (!isset($_SESSION['usuario'])) {
           </nav>
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              <div class="col-lg-12 d-flex justify-content-started mt-2 mb-2">
+                <button class="btn btn-success mr-1" onclick="mostrarDisciplinas()">Asignar Disciplina</button>
+              </div>
               <div class="form-group">
                 <label for="id_alumno">ID Alumno</label>
                 <input type="text" class="form-control" required id="id_alumno" name="id_alumno">
@@ -243,6 +246,19 @@ let mostrar = (id) => {
     });
 }
 
+let mostrarDisciplinas = () => {
+    $.ajax({
+        url: 'Busquedas/Disciplina.php',
+        type: 'post',
+        success: function(response){
+            $('#mostrarModal .modal-body').html(response);
+            $('#mostrarModal').modal('show');
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            console.log(textStatus, errorThrown);
+        }
+    });
+}
 
 let recordatorio = () => {
     Swal.fire({

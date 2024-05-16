@@ -7,7 +7,7 @@ $monto_pago = isset($_POST['monto_pago']) ? $_POST['monto_pago'] : '';
 
 
 
-$sql = "INSERT INTO membresia (id_membresia, fecha_pago, monto_pago)
+$sql = "INSERT INTO pagos (id_membresia, fecha_pago, monto_pago)
 VALUES ('$id_membresia', '$fecha_pago', '$monto_pago')";
 if ($conn->query($sql) === TRUE) {
     echo "Pago generado correctamente";

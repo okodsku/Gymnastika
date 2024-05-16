@@ -38,12 +38,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?=BASE_PATH?>routes/pagos.php" class="nav-link d-flex justify-content-start align-items-center">
-              <img src="<?=BASE_PATH?>src/images/sidebar/card-outline.svg" alt="">
-              <p>Pagos</p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="<?=BASE_PATH?>routes/disciplina.php" class="nav-link d-flex justify-content-start align-items-center">
               <img src="<?=BASE_PATH?>src/images/sidebar/newspaper-outline.svg" alt="">
               <p>Disciplina</p>
@@ -52,11 +46,16 @@
 
           <li class="nav-item">
             <a href="<?=BASE_PATH?>routes/membresias.php" class="nav-link d-flex justify-content-start align-items-center">
-              <img src="<?=BASE_PATH?>src/images/sidebar/newspaper-outline.svg" alt="">
+              <img src="<?=BASE_PATH?>src/images/sidebar/bx-credit-card-front.svg" alt="">
               <p>Membresia</p>
             </a>
           </li>
-          
+          <li class="nav-item">
+            <a href="<?=BASE_PATH?>routes/pagos.php" class="nav-link d-flex justify-content-start align-items-center">
+              <img src="<?=BASE_PATH?>src/images/sidebar/card-outline.svg" alt="">
+              <p>Pagos</p>
+            </a>
+          </li>
           
         </ul>
       </nav>

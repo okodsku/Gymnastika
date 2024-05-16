@@ -90,7 +90,7 @@ $total_disciplina = $row3['total'];
                 <p>Diciplinas</p>
               </div>
               <div class="icon">
-                <img src="<?=BASE_PATH?>src/images/icons/pencil.svg" alt="IconPencil">
+                <img src="<?=BASE_PATH?>src/images/icons/stats.svg" alt="IconPencil">
               </div>
             </div></a>
           </div>
