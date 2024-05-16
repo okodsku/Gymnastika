@@ -25,8 +25,8 @@ $result = $conn->query($sql);
                 echo "<td>" . $row["monto_pago"]. "</td>";
                 echo "<td style='text-align: center;'>
                 <button class='btn btn-danger mb-1' style='margin-right: 10px;' onclick='eliminar(" . $row["id_pago"] . ")'>Eliminar</button>
-                <button class='btn btn-primary mb-1' style='margin-right: 10px;' onclick='mostrar(" . $row["id_pago"] . ")'>Ver Detalles</button>
-                <button class='btn btn-secondary mb-1' onclick='recibo'>Recibo</button>
+                <button class='btn btn-primary mb-1' style='margin-right: 10px; border-color:#0e3e69; background-color:#0e3e69;' onclick='mostrar(" . $row["id_pago"] . ")'>Ver Detalles</button>
+                <button class='btn btn-secondary mb-1' style='border-color:#3d5d71; background-color:#3d5d71;' onclick='recibo'>Recibo</button>
             
             </td>";
                 echo "</tr>";

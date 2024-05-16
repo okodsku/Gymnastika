@@ -51,7 +51,7 @@ if (!isset($_SESSION['usuario'])) {
         <div class="row">
         <div class="col-lg-12 ">
             <div class="col-lg-12 d-flex justify-content-end mb-4">
-              <button class="btn btn-primary" data-toggle="modal" data-target="#studentModal" onclick="recordatorio()">Agregar Disciplina</button>
+              <button class="btn btn-primary" data-toggle="modal" data-target="#studentModal" style='border-color:#3d5d71; background-color:#3d5d71;' onclick="recordatorio()">Agregar Disciplina</button>
             </div>
             <div class="card">
               <div class="card-header">
