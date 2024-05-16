@@ -110,17 +110,16 @@ if (!isset($_SESSION['usuario'])) {
           </nav>
           <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-              <div class="form-group">
-                <label for="id_pago">ID Pago</label>
-                <input type="text" class="form-control" required iid_pago" namid_pago">
+            <div class="col-lg-12 d-flex justify-content-started mt-2 mb-2">
+                <button class="btn btn-success mr-1" onclick="mostrarMembresias()">Asignar Membresia</button>
               </div>
               <div class="form-group">
                 <label for="id_membresia">ID Membresia</label>
-                <input type="text" class="form-control" required id="id_membresia" name="id_membresia">
+                <input type="text" class="form-control" required readonly id="id_membresia" name="id_membresia">
               </div>
               <div class="form-group">
                 <label for="fecha_pago">Fecha de Pago</label>
-                <input type="text" class="form-control" required id="fecha_pago" name="fecha_pago">
+                <input type="date" class="form-control" required id="fecha_pago" name="fecha_pago">
               </div>
               <div class="form-group">
                 <label for="monto_pago">Monto de Pago</label>
@@ -248,6 +247,25 @@ let recordatorio = () => {
         showConfirmButton: false,
         timer: 2500
     });
+}
+
+let mostrarMembresias = () => {
+    $.ajax({
+        url: 'Busquedas/Membresias.php',
+        type: 'post',
+        success: function(response){
+            $('#mostrarModal .modal-body').html(response);
+            $('#mostrarModal').modal('show');
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            console.log(textStatus, errorThrown);
+        }
+    });
+}
+
+let seleccionarMembresia = (id, nombreAlumno, nombreDisciplina) => {
+    $('#id_membresia').val(id);
+    $('#mostrarModal').modal('hide');
 }
 
 </script>
