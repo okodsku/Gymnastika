@@ -112,15 +112,18 @@ if (!isset($_SESSION['usuario'])) {
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
               <div class="col-lg-12 d-flex justify-content-started mt-2 mb-2">
                 <button class="btn btn-success mr-1" onclick="mostrarDisciplinas()">Asignar Disciplina</button>
+                <button class="btn btn-success mr-1" onclick="mostrarAlumnos()">Asignar Alumno</button>
               </div>
               <div class="form-group">
-                <label for="id_alumno">ID Alumno</label>
-                <input type="text" class="form-control" required id="id_alumno" name="id_alumno">
+                <label for="nombreAlumno">Nombre Alumno</label>
+                <input type="text" class="form-control" required readonly id="nombreAlumno" name="nombreAlumno">
               </div>
+              <input type="hidden" class="form-control" id="id_alumno" name="id_alumno">
               <div class="form-group">
-                <label for="id_disciplina">ID Disciplina</label>
-                <input type="text" class="form-control" required id="id_disciplina" name="id_disciplina">
+                <label for="nombreDisciplina">Disciplinar</label>
+                <input type="text" class="form-control" required readonly id="nombreDisciplina" name="nombreDisciplina">
               </div>
+              <input type="hidden" class="form-control" id="id_disciplina" name="id_disciplina">
               <div class="form-group">
                 <label for="horario">Horario</label>
                 <input type="text" class="form-control" required id="horario" name="horario">
@@ -129,8 +132,8 @@ if (!isset($_SESSION['usuario'])) {
                 <label for="capacidad">Capacidad</label>
                 <input type="text" class="form-control" required id="capacidad" name="capacidad">
               </div>
-              <div class="form-group"costo_mensualidad
-                <label for="costo_mensualidad">Costo_mensual</label>
+              <div class="form-group">
+                <label for="costo_mensualidad">Costomensual</label>
                 <input type="text" class="form-control" id="costo_mensualidad" name="costo_mensualidad">
               </div>
             </div>
@@ -270,6 +273,31 @@ let recordatorio = () => {
     });
 }
 
+let seleccionarDisciplina = (id, nombre, costo) => {
+    $('#id_disciplina').val(id);
+    $('#nombreDisciplina').val(nombre);
+    $('#mostrarModal').modal('hide');
+}
+
+let mostrarAlumnos = () => {
+    $.ajax({
+        url: 'Busquedas/Alumno.php',
+        type: 'post',
+        success: function(response){
+            $('#mostrarModal .modal-body').html(response);
+            $('#mostrarModal').modal('show');
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            console.log(textStatus, errorThrown);
+        }
+    });
+}
+
+let seleccionarAlumno = (id, nombre, apellidos) => {
+    $('#id_alumno').val(id);
+    $('#nombreAlumno').val(nombre + ' ' + apellidos);
+    $('#mostrarModal').modal('hide');
+}
 </script>
 </body>
 </html>
