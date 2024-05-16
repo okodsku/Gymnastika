@@ -11,7 +11,7 @@ $result = $conn->query($sql);
             <th>ID Membresia</th>
             <th>Fecha de Pago</th>
             <th>Monto de Pago</th>
-            <th>Operaciones</th>
+            <th style='text-align: center;'>Operaciones</th>
         </tr>
     </thead>
     <tbody>

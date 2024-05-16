@@ -12,7 +12,7 @@ $result = $conn->query($sql);
             <th>ID Disciplina</th>
             <th>Capacidad</th>
             <th>Costo Mensual</th>
-            <th>Operaciones</th>
+            <th style='text-align: center;'>Operaciones</th>
         </tr>
     </thead>
     <tbody>
