@@ -148,7 +148,7 @@ $total_disciplina = $row3['total'];
                 </div>
                 <div class="col-sm-12 col-md-4">
                     <div class="card">
-                        <img src="<?=BASE_PATH?>src/images/v2_6.png" class="card-img-top" style="max-height: 300px;" alt="Image 2">
+                        <img src="<?=BASE_PATH?>src/images/v2_6.png" class="card-img-top" alt="Image 2">
                         <div class="card-body">
                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                         </div>

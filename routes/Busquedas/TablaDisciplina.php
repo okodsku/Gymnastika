@@ -1,6 +1,9 @@
 <?php
 include '../Conexiones/Conexion.php';
-$sql = "SELECT * FROM disciplina";
+
+$sql = "SELECT d.id_disciplina as id_disciplina, d.nombre as nombreDisciplina, i.nombres as nombreInstructor, i.apellidos as apeInstructor, d.costo_clase as costo_clase, d.horario as horario, d.dia_semana as dia_semana FROM disciplina d INNER JOIN instructores i ON d.id_instructor = i.id_instructor";
+
+//$sql = "SELECT * FROM disciplina";
 $result = $conn->query($sql);
 ?>
 
@@ -9,7 +12,7 @@ $result = $conn->query($sql);
         <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>ID Instructor</th>
+            <th>Instructor</th>
             <th>Costo</th>
             <th>Horario</th>
             <th>Dias_Semana</th>
@@ -22,8 +25,8 @@ $result = $conn->query($sql);
             while($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row["id_disciplina"]. "</td>";
-                echo "<td>" . $row["nombre"]. "</td> " ; 
-                echo "<td>". $row["id_instructor"]. "</td>";
+                echo "<td>" . $row["nombreDisciplina"]. "</td> " ; 
+                echo "<td>". $row["nombreInstructor"]. " " . $row["apeInstructor"] . "</td>";
                 echo "<td>" . $row["costo_clase"]. "</td>";
                 echo "<td>" . $row["horario"]. "</td>";
                 echo "<td>" . $row["dia_semana"]. "</td>";
