@@ -76,7 +76,7 @@ $total_disciplina = $row3['total'];
                 <p>Instructores</p>
               </div>
               <div class="icon mr-3">
-                <img src="<?=BASE_PATH?>src/images/icons/Libro.svg" alt="IconMaestros">
+                <img src="<?=BASE_PATH?>src/images/icons/Libro1.svg" alt="IconMaestros">
               </div>
             </div></a>
           </div>
@@ -116,16 +116,16 @@ $total_disciplina = $row3['total'];
           <!-- right col (We are only adding the ID to make the widgets sortable)-->
 
           <section class="col-lg-12 connectedSortable"> <!-- tamaño del boostrap  -->
-            <div class="card">
+            <!--<div class="card">
               <div class="card-header">
                 <h3 class="card-title">
                   <i class="fas fa-chart-pie mr-1"></i>
                   Rendimiento del gimnasio
                 </h3>
-              </div><!-- /.card-header -->
+              </div>
               <div class="card-body">
                 <div class="tab-content p-0">
-                  <!-- Morris chart - Sales -->
+                  
                   <div class="chart tab-pane active" id="revenue-chart"
                        style="position: relative; height: 500px;">
                       <canvas id="revenue-chart-canvas" height="500" style="height: 500px;"></canvas>
@@ -134,34 +134,34 @@ $total_disciplina = $row3['total'];
                     <canvas id="sales-chart-canvas" height="500" style="height: 500px;"></canvas>
                   </div>
                 </div>
-              </div><!-- /.card-body -->
-            </div>
+              </div>
+            </div> -->
 
             <div class="row justify-content-center">
-                <div class="col-sm-12 col-md-4">
-                    <div class="card">
-                        <img src="<?=BASE_PATH?>src/images/v2_5.png" class="card-img-top" alt="Image 1">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
+              <div class="col-sm-12 col-md-4">
+                <div class="card h-100 d-flex justify-content-center align-items-center">
+                  <img src="<?=BASE_PATH?>src/images/v2_5.png" class="card-img-top img-fluid" style="object-fit: cover; margin: 25px;" alt="Image 1">
+                    <div class="card-body">
+                      <p class="card-text text-center">"La clave del éxito es creer en ti mismo incluso cuando nadie más lo hace". - Simone Biles</p>
                     </div>
+                  </div>
                 </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="card">
-                        <img src="<?=BASE_PATH?>src/images/v2_6.png" class="card-img-top" alt="Image 2">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
+              <div class="col-sm-12 col-md-4">
+                <div class="card h-100 d-flex justify-content-center align-items-center">
+                  <img src="<?=BASE_PATH?>src/images/v2_8.png" class="card-img-top img-fluid" style="object-fit: cover; margin: 60px;" alt="Image 2">
+                  <div class="card-body">
+                    <p class="card-text">"El fracaso no es caer, sino la permanencia en el suelo." - Mary Pickford</p>
+                  </div>
                 </div>
-                <div class="col-sm-12 col-md-4">
-                    <div class="card">
-                        <img src="<?=BASE_PATH?>src/images/v2_7.png" class="card-img-top" alt="Image 3">
-                        <div class="card-body">
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
+              </div>
+              <div class="col-sm-12 col-md-4">
+                <div class="card h-100 d-flex justify-content-center align-items-center">
+                  <img src="<?=BASE_PATH?>src/images/v2_7.png" class="card-img-top img-fluid" style="object-fit: cover; margin: 45px;" alt="Image 3">
+                  <div class="card-body">
+                    <p class="card-text text-center">"Los límites solo existen en tu mente; desafía tus límites y descubre lo que eres capaz de lograr". - Simone Biles</p>
+                  </div>
                 </div>
+              </div>
             </div>
             
             

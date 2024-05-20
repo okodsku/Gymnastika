@@ -1,6 +1,6 @@
 <?php
 include '../Conexiones/Conexion.php';
-$sql = "SELECT m.id_membresia as idMembresia, a.nombres as nombreAlumno, a.apellidos as apellidoAlumno, d.nombre as nombreDisciplina, m.horario as horario, m.capacidad as capacidad, m.costo_mensualidad as costo_mensualidad FROM membresia m INNER JOIN alumnos a ON m.id_alumno = a.id_alumno INNER JOIN disciplina d ON m.id_disciplina = d.id_disciplina";
+$sql = "SELECT m.id_membresia as idMembresia, a.nombres as nombreAlumno, a.apellidos as apellidoAlumno, d.nombre as nombreDisciplina, m.nombre as nombreMembresia, m.horario as horario, m.capacidad as capacidad, m.costo_mensualidad as costo_mensualidad FROM membresia m INNER JOIN alumnos a ON m.id_alumno = a.id_alumno INNER JOIN disciplina d ON m.id_disciplina = d.id_disciplina";
 $result = $conn->query($sql);
 ?>
 
@@ -21,6 +21,7 @@ $result = $conn->query($sql);
             while($row = $result->fetch_assoc()) {
                 echo "<tr>";
                 echo "<td>" . $row["idMembresia"]. "</td>";
+                echo "<td>" . $row["nombreMembresia"]. "</td>";
                 echo "<td>" . $row["nombreAlumno"] . " " . $row["apellidoAlumno"] . "</td> " ; 
                 echo "<td>". $row["nombreDisciplina"]. "</td>";
                 echo "<td>" . $row["capacidad"]. "</td>";

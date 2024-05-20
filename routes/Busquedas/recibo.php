@@ -18,14 +18,14 @@ ob_start();
   </head>
   <body>
     <div class="col-12">
-      <div class="card">
-        <div class="card-body">
-          <div class="row d-flex justify-content-between mt-2 mb-2">
+      <div class="card" style="border:5px solid #0e3e69; border-radius: 15px">
+        <div class="card-body"> 
+        <div class="row d-flex justify-content-between mt-2 mb-2">
             <div class="text-left">
               <img src="http://localhost/gymnastika/src/images/v2_4.png" width="70px" alt="Logo del gimnasio"> 
-            </div>
-            <div class="text-right">
-             <p>FECHA: <?php echo $row['fechaPago'] ?></p>
+              <div class="text-right">
+                <p>FECHA: <?php echo $row['fechaPago'] ?></p>
+              </div>
             </div>
           </div>
           <div>
@@ -43,11 +43,12 @@ ob_start();
           </div>
           <div class="row d-flex justify-content-between mt-2 mb-2">
             <div class="text-right">
-              <p>(X)  Transferencia</p> 
+              <p>( )  Transferencia</p> 
+              <p>( )  Efectivo</p> 
             </div>
             <br>
             <div class="text-left">
-             <p>Recibido: </p>
+              <p>Recibido: </p>
             </div>
           </div>
           </div>
@@ -102,7 +103,10 @@ use Dompdf\Dompdf;
 $dompdf = new Dompdf();
 
 $options = $dompdf->getOptions(); $options->set(array('isRemoteEnabled'=>
-true)); $dompdf->setOptions($options); $dompdf->loadHtml($html);
-$dompdf->setPaper('letter'); $dompdf->render();
+true)); $dompdf->setOptions($options); 
+$html .= '<style> @page { size: 8.5in 6.0in; margin: 0.3in; } </style>';
+$dompdf->loadHtml($html);
+
+$dompdf->render();
 $dompdf->stream("Recibo_de_pago.pdf", array("Attachment" => false)); 
 ?>
