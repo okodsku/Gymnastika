@@ -12,9 +12,11 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "<div class='row'>";
+        echo " <div class='col-lg-12 d-flex justify-content-started mt-2 mb-2'>";
+        echo "<div class='row'>";
         echo "<div class='col-md-4'><label>ID Alumno</label><input type='text' class='form-control' value='" . $row["id_alumno"] . "' readonly></div>";
         echo "<div class='col-md-4'><label>Fecha Ingreso</label><input type='text' class='form-control' value='" . $row["fecha_ingreso"] . "' readonly></div>";
-        echo "<div class='col-md-4'><label>Nombres</label><input type='text' class='form-control' value='" . $row["nombres"] . "' ></div>";
+        echo "<div class='col-md-4'><label>Nombres</label><input id='nombresM' name='nombresM' type='text' class='form-control' value='" . $row["nombres"] . "' ></div>";
         echo "<div class='col-md-4'><label>Apellidos</label><input type='text' class='form-control' value='" . $row["apellidos"] . "' ></div>";
         echo "<div class='col-md-4'><label>CURP</label><input type='text' class='form-control' value='" . $row["curp"] . "' ></div>";
         echo "<div class='col-md-4'><label>Tipo Sangre</label><input type='text' class='form-control' value='" . $row["tipo_sangre"] . "' ></div>";
