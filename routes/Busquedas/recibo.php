@@ -20,11 +20,14 @@ ob_start();
     <div class="col-12">
       <div class="card" style="border:5px solid #0e3e69; border-radius: 15px">
         <div class="card-body"> 
-        <div class="row d-flex justify-content-between mt-2 mb-2">
+          <div class="row d-flex justify-content-between mt-2 mb-2">
+            <div class="text-center">
+              <h2>Recibo de Pago</h2>
+            </div>
             <div class="text-left">
               <img src="http://localhost/gymnastika/src/images/v2_4.png" width="70px" alt="Logo del gimnasio"> 
               <div class="text-right">
-                <p>FECHA: <strong><?php echo $row['fechaPago']?> </strong></p>
+                <p><strong>FECHA: </strong><?php echo $row['fechaPago']?></p>
               </div>
             </div>
           </div>
@@ -32,13 +35,13 @@ ob_start();
             <p>                                                                                                                                               Recibo #<?php echo $row['idPago'] ?></p>
           </div>
           <div>
-            <p>Recibi de: <strong> <u> <?php echo $row['nombreAlumno'] ?> <?php echo $row['apellidoAlumno'] ?></u> </strong> </p> 
+            <p><strong>Recibi de: </strong> <u> <?php echo $row['nombreAlumno'] ?> <?php echo $row['apellidoAlumno'] ?></u></p> 
           </div>
           <div>
-            <p>Cantidad de: $<?php echo $row['monto'] ?> <u>pesos m/n</u></p>
+            <p><strong>Cantidad de: </strong> $<?php echo $row['monto'] ?> <u>pesos m/n</u></p>
           </div>
           <div>
-            <p>Concepto: Mensualidad de <?php echo $row['nombreClase'] ?> </p> 
+            <p><strong>Concepto: </strong> Mensualidad de  <?php echo $row['nombreClase'] ?> </p> 
           </div>
           <div class="row d-flex justify-content-between mt-2 mb-2">
             <div class="text-right">
@@ -46,8 +49,9 @@ ob_start();
               <p>( )  Efectivo</p> 
             </div>
             <br>
-            <div class="text-left">
+            <div class= "row text-left">
               <p>Recibido: </p>
+              <img src="http://localhost/gymnastika/src/images/Firma.png" width="70px" alt="Logo del gimnasio"> 
             </div>
           </div>
           </div>
