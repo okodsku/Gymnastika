@@ -12,20 +12,22 @@ if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
         echo "<div class='row'>";
-        echo " <div class='col-lg-12 d-flex justify-content-started mt-2 mb-2'>";
+        echo "<div class='col-lg-12 d-flex justify-content-started mt-2 mb-2'>";
+        echo "<button class='btn btn-success mr-1' onclick='mostrarPadres()'>Asignar Padre</button>"
+        echo "<button class='btn btn-info' onclick='mostrarMadres()'>Asignar Madre</button>"
         echo "<div class='row'>";
         echo "<div class='col-md-4'><label>ID Alumno</label><input type='text' class='form-control' value='" . $row["id_alumno"] . "' readonly></div>";
         echo "<div class='col-md-4'><label>Fecha Ingreso</label><input type='text' class='form-control' value='" . $row["fecha_ingreso"] . "' readonly></div>";
-        echo "<div class='col-md-4'><label>Nombres</label><input id='nombresM' name='nombresM' type='text' class='form-control' value='" . $row["nombres"] . "' ></div>";
-        echo "<div class='col-md-4'><label>Apellidos</label><input type='text' class='form-control' value='" . $row["apellidos"] . "' ></div>";
-        echo "<div class='col-md-4'><label>CURP</label><input type='text' class='form-control' value='" . $row["curp"] . "' ></div>";
+        echo "<div class='col-md-4'><label>Nombres</label><input required id='nombresM' name='nombresM' type='text' class='form-control' value='" . $row["nombres"] . "' ></div>";
+        echo "<div class='col-md-4'><label>Apellidos</label><input required id='apellidosM' name='apellidosM' type='text' class='form-control' value='" . $row["apellidos"] . "' ></div>";
+        echo "<div class='col-md-4'><label>Domicilio</label><input required id='domicilioM' name='domicilioM' type='text' class='form-control' value='" . $row["curp"] . "' ></div>";
         echo "<div class='col-md-4'><label>Tipo Sangre</label><input type='text' class='form-control' value='" . $row["tipo_sangre"] . "' ></div>";
         echo "<div class='col-md-4'><label>Alergias</label><input type='text' class='form-control' value='" . $row["alergias"] . "' ></div>";
         echo "<div class='col-md-4'><label>Operaciones</label><input type='text' class='form-control' value='" . $row["operaciones"] . "' ></div>";
         echo "<div class='col-md-4'><label>Nombre Padre</label><input type='text' class='form-control' value='" . $row["pnombre"] . " ". $row["papellido"] ."' readonly></div>";
         echo "<div class='col-md-4'><label>Nombre Madre</label><input type='text' class='form-control' value='" . $row["mnombre"] . "' readonly></div>";
         echo "<div class='col-md-4'><label>Numero Celular de Emergencia</label><input type='text' class='form-control' value='" . $row["numEme"] . "' readonly></div>";
-        echo "<div class='col-md-4'><label>Celular del Padre</label><input type='text' class='form-control' value='" . $row["celularP"] . "' readonly></div>";
+        echo "<div class='col-md-4'><label>Celular del Padre</label><input required id='celularM' name='celularM' type='text' class='form-control' value='" . $row["celularP"] . "' readonly></div>";
         
         echo "</div>";
         echo "<div class='row'>";
