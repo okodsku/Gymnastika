@@ -2,7 +2,7 @@
 
 include '../Conexiones/Conexion.php';
 $id = $_GET['id'];
-$sql = "SELECT p.id_pago as idPago, p.fecha_pago as fechaPago, p.monto_pago as monto, d.nombre as nombreClase, a.nombres as nombreAlumno FROM pagos p INNER JOIN membresia m ON p.id_membresia=m.id_membresia INNER JOIN disciplina d ON d.id_disciplina=m.id_disciplina INNER JOIN alumnos a ON m.id_alumno = a.id_alumno WHERE p.id_pago = $id";
+$sql = "SELECT p.id_pago as idPago, p.fecha_pago as fechaPago, p.monto_pago as monto, d.nombre as nombreClase, a.nombres as nombreAlumno,  a.apellidos as apellidoAlumno FROM pagos p INNER JOIN membresia m ON p.id_membresia=m.id_membresia INNER JOIN disciplina d ON d.id_disciplina=m.id_disciplina INNER JOIN alumnos a ON m.id_alumno = a.id_alumno WHERE p.id_pago = $id";
 $result = $conn->query($sql); 
 $row = $result->fetch_assoc();
 ob_start(); 
@@ -32,7 +32,7 @@ ob_start();
             <p>                                                                                                                                               Recibo #<?php echo $row['idPago'] ?></p>
           </div>
           <div>
-            <p>Recibi de: <strong> <u> <?php echo $row['nombreAlumno'] ?> </u> </strong> </p> 
+            <p>Recibi de: <strong> <u> <?php echo $row['nombreAlumno'] ?> <?php echo $row['apellidoAlumno'] ?></u> </strong> </p> 
           </div>
           <div>
             <p>Cantidad de: $<?php echo $row['monto'] ?> <u>pesos m/n</u></p>
