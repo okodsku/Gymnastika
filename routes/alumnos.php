@@ -292,6 +292,22 @@ if (!isset($_SESSION['usuario'])) {
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="modificarAlumnoModal" tabindex="-1" role="dialog" aria-labelledby="modificarAlumnoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modificarAlumnoModalLabel">Modificar Alumno</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="modal-body-alumno"></div>
+      </div>
+    </div>
+  </div>
+</div>
   <!-- /.content-wrapper -->
   
   <!-- Control Sidebar -->
@@ -457,6 +473,21 @@ let seleccionarMadre = (id, nombreM, apellidoM, celularM) => {
     $('#idM').val(id);
     $('#agregarMModal').modal('hide');
 }
+
+  let modificar = (id) => {
+    $.ajax({
+      url: 'Busquedas/ModificarAlumnoModal.php',
+      type: 'post',
+      data: {id: id},
+      success: function(response){
+        $('#modal-body-alumno').html(response);
+        $('#modificarAlumnoModal').modal('show');
+      },
+      error: function(jqXHR, textStatus, errorThrown){
+        console.log(textStatus, errorThrown);
+      }
+    });
+  }
 </script>
 </body>
 </html>
