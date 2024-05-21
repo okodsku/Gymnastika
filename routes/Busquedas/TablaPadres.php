@@ -4,6 +4,7 @@ $sql = "SELECT * FROM padres";
 $result = $conn->query($sql);
 
 $padre_madre = isset($_POST['padre_madre']) ? $_POST['padre_madre'] : '';
+$modificar = isset($_POST['modificar']) ? $_POST['modificar'] : '0';
 
 if ($result->num_rows > 0) {
     echo "<table id='tablaP' class='display' style='width:100%'>";
@@ -29,7 +30,7 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row["celular"] . "</td>";
         echo "<td>" . $row["correo"] . "</td>";
         echo "<td>" . $row["ocupacion"] . "</td>";
-        echo "<td><button class='btn btn-primary' onclick='seleccionar".$padre_madre."(\"" . $row["id_padre"] . "\", \"" . $row["nombres"] . "\", \"". $row["apellidos"] . "\", \"". $row["celular"] . "\")'>Seleccionar</button></td>";
+        echo "<td><button class='btn btn-primary' onclick='seleccionar".$padre_madre."(\"" . $row["id_padre"] . "\", \"" . $row["nombres"] . "\", \"". $row["apellidos"] . "\", \"". $row["celular"] . "\", \"". $modificar . "\")'>Seleccionar</button></td>";
         echo "</tr>";
     }
     echo "</tbody>";

@@ -262,7 +262,7 @@ if (!isset($_SESSION['usuario'])) {
   </div>
 </div>
 
-<div class="modal fade" id="agregarPModal" tabindex="-1" role="dialog" aria-labelledby="agregarPModalLabel" aria-hidden="true">
+<div class="modal fade" id="agregarPModal" tabindex="-1" style="z-index: 1060 !important;" role="dialog" aria-labelledby="agregarPModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -277,7 +277,7 @@ if (!isset($_SESSION['usuario'])) {
   </div>
 </div>
 
-<div class="modal fade" id="agregarMModal" tabindex="-1" role="dialog" aria-labelledby="agregarMModalLabel" aria-hidden="true">
+<div class="modal fade" id="agregarMModal" style="z-index: 1060 !important;" tabindex="-1" role="dialog" aria-labelledby="agregarMModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -293,7 +293,7 @@ if (!isset($_SESSION['usuario'])) {
   </div>
 </div>
 
-<div class="modal fade" id="modificarAlumnoModal" tabindex="-1" role="dialog" aria-labelledby="modificarAlumnoModalLabel" aria-hidden="true">
+<div class="modal fade" id="modificarAlumnoModal" style="z-index: 1050 !important; " tabindex="-1" role="dialog" aria-labelledby="modificarAlumnoModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -423,14 +423,14 @@ let recordatorio = () => {
     });
 }
 
-let mostrarPadres = () => {
+let mostrarPadres = (modificar) => {
   $('.modal-body-padre').html('');
   $('.modal-body-madre').html('');
   
     $.ajax({
         url: 'Busquedas/TablaPadres.php',
         type: 'post',
-        data: {padre_madre: 'Padre'},
+        data: {padre_madre: 'Padre',modificar: modificar},
         success: function(response){
             $('.modal-body-padre').html(response);
             $('#agregarPModal').modal('show');
@@ -441,21 +441,27 @@ let mostrarPadres = () => {
     });
 }
 
-let seleccionarPadre = (id, nombreP, apellidoP, celularP) => {
+let seleccionarPadre = (id, nombreP, apellidoP, celularP,modificar) => {
+  if(modificar == 1){
+    $("#nombrePadreModal").val(nombreP+" "+apellidoP)
+    $("#idPadreModal").val(id)
+    $('#agregarPModal').modal('hide');
+  }else{
     $('#nombreP').val(nombreP);
     $('#apellidoP').val(apellidoP);
     $('#celularP').val(celularP);
     $('#idP').val(id);
     $('#agregarPModal').modal('hide');
+  }
 }
 
-let mostrarMadres = () => {
+let mostrarMadres = (modificar) => {
   $('.modal-body-padre').html('');
   $('.modal-body-madre').html('');
     $.ajax({
         url: 'Busquedas/TablaPadres.php',
         type: 'post',
-        data: {padre_madre: 'Madre'},
+        data: {padre_madre: 'Madre', modificar: modificar},
         success: function(response){
             $('.modal-body-madre').html(response);
             $('#agregarMModal').modal('show');
@@ -466,12 +472,18 @@ let mostrarMadres = () => {
     });
 }
 
-let seleccionarMadre = (id, nombreM, apellidoM, celularM) => {
+let seleccionarMadre = (id, nombreM, apellidoM, celularM, modificar) => {
+  if(modificar == 1){
+    $("#nombreMadreModal").val(nombreM+" "+apellidoM)
+    $("#idMadreModal").val(id)
+    $('#agregarMModal').modal('hide');
+  }else{
     $('#nombreM').val(nombreM);
     $('#apellidoM').val(apellidoM);
     $('#celularM').val(celularM);
     $('#idM').val(id);
     $('#agregarMModal').modal('hide');
+  }
 }
 
   let modificar = (id) => {
@@ -482,6 +494,21 @@ let seleccionarMadre = (id, nombreM, apellidoM, celularM) => {
       success: function(response){
         $('#modal-body-alumno').html(response);
         $('#modificarAlumnoModal').modal('show');
+      },
+      error: function(jqXHR, textStatus, errorThrown){
+        console.log(textStatus, errorThrown);
+      }
+    });
+  }
+
+  let guardarAlumno = () => {
+    $.ajax({
+      url: 'Busquedas/ModificarAlumno.php',
+      type: 'post',
+      data: $('#formModificarAlumno').serialize(),
+      success: function(response){
+        Swal.fire(response, '', 'success');
+        $('#modificarAlumnoModal').modal('hide');
       },
       error: function(jqXHR, textStatus, errorThrown){
         console.log(textStatus, errorThrown);
