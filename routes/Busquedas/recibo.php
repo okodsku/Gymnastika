@@ -2,7 +2,7 @@
 
 include '../Conexiones/Conexion.php';
 $id = $_GET['id'];
-$sql = "SELECT p.id_pago as idPago, p.fecha_pago as fechaPago, p.monto_pago as monto, d.nombre as nombreClase FROM pagos p INNER JOIN membresia m ON p.id_membresia=m.id_membresia INNER JOIN disciplina d ON d.id_disciplina=m.id_disciplina WHERE p.id_pago = $id";
+$sql = "SELECT p.id_pago as idPago, p.fecha_pago as fechaPago, p.monto_pago as monto, d.nombre as nombreClase, a.nombres as nombreAlumno FROM pagos p INNER JOIN membresia m ON p.id_membresia=m.id_membresia INNER JOIN disciplina d ON d.id_disciplina=m.id_disciplina INNER JOIN alumnos a ON m.id_alumno = a.id_alumno WHERE p.id_pago = $id";
 $result = $conn->query($sql); 
 $row = $result->fetch_assoc();
 ob_start(); 
@@ -24,22 +24,21 @@ ob_start();
             <div class="text-left">
               <img src="http://localhost/gymnastika/src/images/v2_4.png" width="70px" alt="Logo del gimnasio"> 
               <div class="text-right">
-                <p>FECHA: <?php echo $row['fechaPago'] ?></p>
+                <p>FECHA: <strong><?php echo $row['fechaPago']?> </strong></p>
               </div>
             </div>
           </div>
           <div>
-            <p>                                                                                                                         #<?php echo $row['idPago'] ?></p>
+            <p>                                                                                                                                               Recibo #<?php echo $row['idPago'] ?></p>
           </div>
           <div>
-            <p>Recibi de:___________________________________________________   $<?php echo $row['monto'] ?></p> 
+            <p>Recibi de: <strong> <u> <?php echo $row['nombreAlumno'] ?> </u> </strong> </p> 
           </div>
           <div>
-            <p>Cantidad de: <u>pesos m/n</u></p>
+            <p>Cantidad de: $<?php echo $row['monto'] ?> <u>pesos m/n</u></p>
           </div>
           <div>
-            <p>Concepto: Mensualidad de </p>
-                              <?php echo $row['nombreClase'] ?>
+            <p>Concepto: Mensualidad de <?php echo $row['nombreClase'] ?> </p> 
           </div>
           <div class="row d-flex justify-content-between mt-2 mb-2">
             <div class="text-right">
