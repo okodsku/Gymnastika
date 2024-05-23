@@ -160,6 +160,22 @@ if (!isset($_SESSION['usuario'])) {
     </div>
   </div>
 </div>
+
+<div class="modal fade" id="modificarInstructoresModal" style="z-index: 1050 !important; " tabindex="-1" role="dialog" aria-labelledby="modificarInstructoresModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modificarInstructoresModalLabel">Modificar Instructor</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="modal-body-alumno"></div>
+      </div>
+    </div>
+  </div>
+</div>
   <!-- /.content-wrapper -->
   
   <!-- Control Sidebar -->
@@ -257,6 +273,35 @@ let recordatorio = () => {
         timer: 2500
     });
 }
+let modificar = (id) => {
+    $.ajax({
+      url: 'Busquedas/ModificarInstructoresModal.php',
+      type: 'post',
+      data: {id: id},
+      success: function(response){
+        $('#modal-body-alumno').html(response);
+        $('#modificarInstructoresModal').modal('show');
+      },
+      error: function(jqXHR, textStatus, errorThrown){
+        console.log(textStatus, errorThrown);
+      }
+    });
+  }
+
+  let guardarInstructores = () => {
+    $.ajax({
+      url: 'Busquedas/ModificarInstructores.php',
+      type: 'post',
+      data: $('#formModificarInstructores').serialize(),
+      success: function(response){
+        Swal.fire(response, '', 'success');
+        $('#ModificarInstructoresModal').modal('hide');
+      },
+      error: function(jqXHR, textStatus, errorThrown){
+        console.log(textStatus, errorThrown);
+      }
+    });
+  }
 
 </script>
 </body>
