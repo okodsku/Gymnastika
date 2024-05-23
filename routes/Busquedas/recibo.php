@@ -38,7 +38,7 @@ ob_start();
             <p><strong>Recibi de: </strong> <u> <?php echo $row['nombreAlumno'] ?> <?php echo $row['apellidoAlumno'] ?></u></p> 
           </div>
           <div>
-            <p><strong>Cantidad de: </strong> $<?php echo $row['monto'] ?> <u>pesos m/n</u></p>
+            <p><strong>Cantidad de: </strong> <u>$<?php echo $row['monto'] ?></u> <u>pesos m/n</u></p>
           </div>
           <div>
             <p><strong>Concepto: </strong> Mensualidad de  <?php echo $row['nombreClase'] ?> </p> 
