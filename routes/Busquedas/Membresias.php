@@ -1,7 +1,7 @@
 <?php
 include '../Conexiones/Conexion.php';
 
-$sql = "SELECT m.id_membresia as idMembresia, a.nombres as nombreAlumno, a.apellidos as apellidoAlumno, d.nombre as nombreDisciplina FROM membresia m INNER JOIN alumnos a ON m.id_alumno = a.id_alumno INNER JOIN disciplina d ON m.id_disciplina = d.id_disciplina";
+$sql = "SELECT m.id_membresia as idMembresia, a.nombres as nombreAlumno, a.apellidos as apellidoAlumno, d.nombre as nombreDisciplina, d.costo_clase as costoDisciplina FROM membresia m INNER JOIN alumnos a ON m.id_alumno = a.id_alumno INNER JOIN disciplina d ON m.id_disciplina = d.id_disciplina";
 $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     echo "<table id='tablaM' class='display' style='width:100%'>";
@@ -10,6 +10,7 @@ if ($result->num_rows > 0) {
     echo "<th>ID Membresia</th>";
     echo "<th>Nombre Alumno</th>";
     echo "<th>Disciplina</th>";
+    echo "<th>Costo Disciplina</th>";
     echo "<th>Seleccionar</th>";
     echo "</tr>";
     echo "</thead>";
@@ -19,7 +20,8 @@ if ($result->num_rows > 0) {
         echo "<td>" . $row["idMembresia"] . "</td>";
         echo "<td>" . $row["nombreAlumno"] . " ". $row["apellidoAlumno"] ."</td>";
         echo "<td>" . $row["nombreDisciplina"] . "</td>";
-        echo "<td><button class='btn btn-primary' onclick='seleccionarMembresia(\"" . $row["idMembresia"] . "\", \"" . $row["nombreAlumno"] . "\", \"" . $row["nombreDisciplina"] . "\")'>Seleccionar</button></td>";
+        echo "<td>" . $row["costoDisciplina"] . "</td>";
+        echo "<td><button class='btn btn-primary' onclick='seleccionarMembresia(\"" . $row["idMembresia"] . "\", \"" . $row["nombreAlumno"] . "\", \"" . $row["nombreDisciplina"] . "\" , \"" . $row["costoDisciplina"] . "\")'>Seleccionar</button></td>";
         echo "</tr>";
     }
     echo "</tbody>";

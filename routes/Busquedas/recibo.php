@@ -2,7 +2,7 @@
 
 include '../Conexiones/Conexion.php';
 $id = $_GET['id'];
-$sql = "SELECT p.id_pago as idPago, p.fecha_pago as fechaPago, p.monto_pago as monto, d.nombre as nombreClase, a.nombres as nombreAlumno,  a.apellidos as apellidoAlumno FROM pagos p INNER JOIN membresia m ON p.id_membresia=m.id_membresia INNER JOIN disciplina d ON d.id_disciplina=m.id_disciplina INNER JOIN alumnos a ON m.id_alumno = a.id_alumno WHERE p.id_pago = $id";
+$sql = "SELECT p.id_pago as idPago, p.fecha_pago as fechaPago, d.costo_clase as monto, d.nombre as nombreClase, a.nombres as nombreAlumno,  a.apellidos as apellidoAlumno FROM pagos p INNER JOIN membresia m ON p.id_membresia=m.id_membresia INNER JOIN disciplina d ON d.id_disciplina=m.id_disciplina INNER JOIN alumnos a ON m.id_alumno = a.id_alumno WHERE p.id_pago = $id";
 $result = $conn->query($sql); 
 $row = $result->fetch_assoc();
 ob_start(); 

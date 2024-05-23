@@ -263,8 +263,9 @@ let mostrarMembresias = () => {
     });
 }
 
-let seleccionarMembresia = (id, nombreAlumno, nombreDisciplina) => {
+let seleccionarMembresia = (id, nombreAlumno, nombreDisciplina, montoPago) => {
     $('#id_membresia').val(id);
+    $('#monto_pago').val(montoPago);
     $('#mostrarModal').modal('hide');
 }
 

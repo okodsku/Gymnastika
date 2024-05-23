@@ -289,13 +289,14 @@ let modificar = (id) => {
   }
 
   let guardarInstructores = () => {
+    event.preventDefault();
     $.ajax({
       url: 'Busquedas/ModificarInstructores.php',
       type: 'post',
       data: $('#formModificarInstructores').serialize(),
       success: function(response){
         Swal.fire(response, '', 'success');
-        $('#ModificarInstructoresModal').modal('hide');
+        $('#modificarInstructoresModal').modal('hide');
       },
       error: function(jqXHR, textStatus, errorThrown){
         console.log(textStatus, errorThrown);

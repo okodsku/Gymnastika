@@ -14,7 +14,7 @@ if ($result->num_rows > 0) {
         echo "<div class='col-md-4'><label>Nombres</label><input required id='nombresModal' name='nombresModal' type='text' class='form-control' value='" . $row["nombres"] . "' ></div>";
         echo "<div class='col-md-4'><label>Apellidos</label><input required id='apellidosModal' name='apellidosModal' type='text' class='form-control' value='" . $row["apellidos"] . "' ></div>";
         echo "<div class='col-md-4'><label>Domicilio</label><input required id='domicilioModal' name='domicilioModal' type='text' class='form-control' value='" . $row["domicilio"] . "' ></div>";
-        echo "<div class='col-md-4'><label>Celular</label><input id='celularModal' name='celularModal' type='text' class='form-control' value='" . $row["celular"] . "' ></div>";
+        echo "<div class='col-md-4'><label>Celular</label><input id='celularModal' name='celularModal' type='text' maxlength='10' class='form-control' value='" . $row["celular"] . "' ></div>";
         echo "<div class='col-md-4'><label>Correo</label><input id='correoModal' name='correoModal' type='text' class='form-control' value='" . $row["correo"] . "' ></div>";
         echo "<div class='col-md-4'><label>Sueldo</label><input id='sueldoModal' name='sueldoModal' type='text' class='form-control' value='" . $row["sueldo"] . "' ></div>";
         echo "</div>";

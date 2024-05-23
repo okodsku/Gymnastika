@@ -3,7 +3,7 @@ include '../Conexiones/Conexion.php';
 
 $id = isset($_POST['id']) ? $_POST['id'] : '';
 
-$sql = "DELETE FROM pagos WHERE id_pagos = $id";
+$sql = "DELETE FROM pagos WHERE id_pago = $id";
 $result = $conn->query($sql);
 
 if ($result) {
