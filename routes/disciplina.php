@@ -146,11 +146,27 @@ if (!isset($_SESSION['usuario'])) {
   </div>
 </div>
 
+<div class="modal fade" id="modificarDisciplinaModal" style="z-index: 1050 !important; " tabindex="-1" role="dialog" aria-labelledby="modificarDisciplinaModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modificarDisciplinaModalLabel">Modificar Disciplina</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="modal-body-alumno"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade" id="mostrarModal" tabindex="-1" role="dialog" aria-labelledby="mostrarModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-xl" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="mostrarModalLabel">Mostrar Disciplina</h5>
+        <h5 class="modal-title" id="mostrarModalLabel">Instructores</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -160,6 +176,7 @@ if (!isset($_SESSION['usuario'])) {
     </div>
   </div>
 </div>
+
   <!-- /.content-wrapper -->
   
   <!-- Control Sidebar -->
@@ -277,7 +294,42 @@ let seleccionarInstructor = (id, nombres, apellidos, celular) => {
     $('#nombreInstructor').val(nombres + ' ' + apellidos);
     $('#mostrarModal').modal('hide');
     Swal.fire('Instructor Seleccionado', nombres + ' ' + apellidos + ' ' + celular, 'success');
+
+
 }
+
+let modificar = (id) => {
+    $.ajax({
+      url: 'Busquedas/ModificarDisciplinaModal.php',
+      type: 'post',
+      data: {id: id},
+      success: function(response){
+        $('#modal-body-alumno').html(response);
+        $('#modificarDisciplinaModal').modal('show');
+      },
+      error: function(jqXHR, textStatus, errorThrown){
+        console.log(textStatus, errorThrown);
+      }
+    });
+  }
+
+  let guardarDisciplina = () => {
+    $.ajax({
+      url: 'Busquedas/ModificarDisciplina.php',
+      type: 'post',
+      data: $('#formModificarDisciplina').serialize(),
+      success: function(response){
+        Swal.fire(response, '', 'success');
+        setTimeout(() => {
+          location.reload();
+        }, 2000); 
+        $('#modificarDisciplinaModal').modal('hide');
+      },
+      error: function(jqXHR, textStatus, errorThrown){
+        console.log(textStatus, errorThrown);
+      }
+    });
+  }
 
 </script>
 </body>

@@ -38,10 +38,10 @@ ob_start();
             <p><strong>Recibi de: </strong> <u> <?php echo $row['nombreAlumno'] ?> <?php echo $row['apellidoAlumno'] ?></u></p> 
           </div>
           <div>
-            <p><strong>Cantidad de: </strong> <u>$<?php echo $row['monto'] ?></u> <u>pesos m/n</u></p>
+            <p><strong>Cantidad de: </strong> <u>$<?php echo $row['monto'] ?></u><u> pesos m/n</u></p>
           </div>
           <div>
-            <p><strong>Concepto: </strong> Mensualidad de  <?php echo $row['nombreClase'] ?> </p> 
+            <p><strong>Concepto: </strong><u>Mensualidad de  <?php echo $row['nombreClase'] ?></u></p> 
           </div>
           <div class="row d-flex justify-content-between mt-2 mb-2">
             <div class="text-right">
