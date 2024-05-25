@@ -120,7 +120,7 @@ if (!isset($_SESSION['usuario'])) {
               </div>
               <input type="hidden" class="form-control" id="id_alumno" name="id_alumno">
               <div class="form-group">
-                <label for="nombreDisciplina">Disciplinar</label>
+                <label for="nombreDisciplina">Disciplina</label>
                 <input type="text" class="form-control" required readonly id="nombreDisciplina" name="nombreDisciplina">
               </div>
               <input type="hidden" class="form-control" id="id_disciplina" name="id_disciplina">
