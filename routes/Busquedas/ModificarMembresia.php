@@ -13,10 +13,10 @@
   $idMadreModal = isset($_POST['idMadreModal']) ? $_POST['idMadreModal'] : '';
   $celularEmergenciaModal = isset($_POST['celularEmergenciaModal']) ? $_POST['celularEmergenciaModal'] : '';
   $idEmergenciaModal = isset($_POST['idEmergenciaModal']) ? $_POST['idEmergenciaModal'] : '';
-  $query = "UPDATE membresia SET id_alumno = '$$idAlumnoModal', id_disciplina = '$idDisciplinaModal', horario = '$horarioModal', capacidad = '$capacidadModal', costo_mensualidad = '$costoMensualidadModal' WHERE id_membresia = '$idembresiaModal'";
+  $query = "UPDATE membresia SET id_alumno = '$idAlumnoModal', id_disciplina = '$idDisciplinaModal', horario = '$horarioModal', capacidad = '$capacidadModal', costo_mensualidad = '$costoMensualidadModal' WHERE id_membresia = '$idembresiaModal'";
   
   if ($conn->query($query) === TRUE) {
-    echo "Alumno modificado exitosamente";
+    echo "Membresia modificada exitosamente";
   } else {
     echo "Error: " . $query . "<br>" . $con->error;
   }

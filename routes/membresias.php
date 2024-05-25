@@ -133,7 +133,7 @@ if (!isset($_SESSION['usuario'])) {
                 <input type="text" class="form-control" required id="capacidad" name="capacidad">
               </div>
               <div class="form-group">
-                <label for="costo_mensualidad">Costomensual</label>
+                <label for="costo_mensualidad">Costo Mensual</label>
                 <input type="text" class="form-control" id="costo_mensualidad" name="costo_mensualidad">
               </div>
             </div>
