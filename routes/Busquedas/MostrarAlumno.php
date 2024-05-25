@@ -20,15 +20,15 @@ if ($result->num_rows > 0) {
         echo "<div class='col-md-4'><label>Tipo Sangre</label><input type='text' class='form-control' value='" . $row["tipo_sangre"] . "' readonly></div>";
         echo "<div class='col-md-4'><label>Alergias</label><input type='text' class='form-control' value='" . $row["alergias"] . "' readonly></div>";
         echo "<div class='col-md-4'><label>Operaciones</label><input type='text' class='form-control' value='" . $row["operaciones"] . "' readonly></div>";
-        echo "<div class='col-md-4'><label>Nombre Padre</label><input type='text' class='form-control' value='" . $row["pnombre"] . " ". $row["papellido"] ."' readonly></div>";
-        echo "<div class='col-md-4'><label>Celular del Padre</label><input type='text' class='form-control' value='" . $row["celularP"] . "' readonly></div>";
-        echo "<div class='col-md-4'><label>Correo del Padre</label><input type='text' class='form-control' value='" . $row["celularM"] . "' readonly></div>";
-        echo "<div class='col-md-4'><label>Nombre Madre</label><input type='text' class='form-control' value='" . $row["mnombre"] . "' readonly></div>";
-        echo "<div class='col-md-4'><label>Numero Celular de Emergencia</label><input type='text' class='form-control' value='" . $row["numEme"] . "' readonly></div>";
-        echo "<div class='col-md-4'><label>Celular de la Madre</label><input type='text' class='form-control' value='" . $row["celularM"] . "' readonly></div>";
-        echo "<div class='col-md-4'><label>Correo de la Madre</label><input type='text' class='form-control' value='" . $row["celularM"] . "' readonly></div>";
         echo "<div class='col-md-4'><label>Domicilio Padres</label><input type='text' class='form-control' value='" . $row["pdomicilio"] . "' readonly></div>";
+        echo "<div class='col-md-4'><label>Nombre Padre</label><input type='text' class='form-control' value='" . $row["pnombre"] . " ". $row["papellido"] ."' readonly></div>";
+        echo "<div class='col-md-4'><label>Nombre Madre</label><input type='text' class='form-control' value='" . $row["mnombre"] . "' readonly></div>";
         echo "<div class='col-md-4'><label>Contacto Emergencia</label><input type='text' class='form-control' value='" . $row["nomEme"] . "' readonly></div>";
+        echo "<div class='col-md-4'><label>Celular del Padre</label><input type='text' class='form-control' value='" . $row["celularP"] . "' readonly></div>";
+        echo "<div class='col-md-4'><label>Celular de la Madre</label><input type='text' class='form-control' value='" . $row["celularM"] . "' readonly></div>";
+        echo "<div class='col-md-4'><label>Numero Celular de Emergencia</label><input type='text' class='form-control' value='" . $row["numEme"] . "' readonly></div>";
+        echo "<div class='col-md-4'><label>Correo del Padre</label><input type='text' class='form-control' value='" . $row["celularM"] . "' readonly></div>";
+        echo "<div class='col-md-4'><label>Correo de la Madre</label><input type='text' class='form-control' value='" . $row["celularM"] . "' readonly></div>";
 
 
         echo "</div>";
